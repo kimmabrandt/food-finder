@@ -1,26 +1,129 @@
 
 body {
-  padding: 50px;
-  font: bold 12px Arial;
+  background-color: #fff;
+  /*background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");*/
+  background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 a {
-  text-decoration: none;
+  /*text-decoration: none;*/
+  color: #263238;
+}
+a:hover {
+  color: #263238;
+  background-color: #ffd740;
+  border-bottom: 1px solid #ffd740;
+}
+#container {
+  width: 800px;
+  height: 100%;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  border-left: 4px solid #ffd740;
+  border-right: 4px solid #ffd740;
+}
+
+/* HEADER */
+#top-container {
+  margin: 0px;
+}
+#top {
+  background-color: #808d94;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* HEADER */
+#header {
+  padding: 20px 20px 20px 30px;
+  margin: 0px;
+}
+#header h1 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 50px;
+  letter-spacing: 2px;
+  color: #263238;
+  height: 50px;
+  margin: 0px;
+  padding: 0px;
+}
+#header img {
+  height: 42px;
+  margin: 0px 10px;
+}
+#header p {
+  text-transform: uppercase;
+  font-family: 'Asap', sans-serif;
+  /*font-family: 'Cairo', sans-serif;*/
+  font-weight: 400;
+  font-style: italic;
+  font-size: 23px;
+  color: #546e7a;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+/* MAP / BODY */
+#body-container {
+  padding: 0px 20px;
+}
+#map-body {
+  padding: 0px;
 }
 #map {
   height:500px;
   width:500px;
-  box-shadow: 3px 3px 10px gray;
+  /*box-shadow: 3px 3px 10px gray;*/
 }
+
+/* SIDEBAR */
+#sidebar {
+  padding: 10px;
+  height: 500px;
+}
+#sidebar h4 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 30px;
+  letter-spacing: 1px;
+  color: #263238;
+  margin: 10px 0px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #808d94;
+}
+#sidebar-container {
+/*margin-left: 5px;*/
+}
+#sidebarInfo {
+  padding: 10px;
+  height: 500px;
+}
+
+
+
+/*idk*/
 #repeat {
-  display: inline;
+  display: block;
+  margin: 10px 0;
+}
+#region-list li {
+  padding: 1px;
+}
+#region-list {
+  margin-top: 5px;
 }
 #country_container {
-  width: 1000px;
-  margin: 13px 3px 3px 0px;
+  /*width: 1000px;*/
+  /*margin: 13px 3px 3px 0px;*/
   text-align: center;
-  width: 85px;
+  /*width: 85px;*/
   padding: 4px;
-  display: inline-table;
+  /*display: inline-table;*/
   color: white;
   background-color: black;
   font-size: 12px;

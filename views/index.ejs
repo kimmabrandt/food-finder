@@ -1,36 +1,88 @@
 <!DOCTYPE html>
-<html ng-app="foodFinder">
+<html>
   <head>
     <meta charset="utf-8">
     <title><%= title %></title>
     <!-- stylesheets -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Autour+One|Bevan|Patrick+Hand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500i,600,700|Cairo:300,400,600,900|Roboto+Slab:400,700|Rubik:300,400,400i,500,700,900|Zilla+Slab+Highlight:400,700" rel="stylesheet">
 
 
   </head>
-  <body>
-    <div ng-controller="MapCtrl">
+  <body ng-app="foodFinder">
+    <div id="container" class="white"  ng-controller="MapCtrl">
 
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-      {{1+1}}
-      <div id="map">
-      </div>
-      <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
-        <a id="country_container" href="#" ng-click="OpenInfoWindow($event, marker)">
-        <label id="names">{{marker.title}}</label></a>
+      <!-- top thingie -->
+      <div id="top-container" class="row">
+        <div id="top" class="col s12">
+
+        </div>
       </div>
 
+      <!-- header -->
+      <div class="row">
+        <div id="header" class="col s12 blue-grey lighten-5">
+          <h1>Food<img src="/images/010-compass.svg">Finder</h1>
+          <p>For Hikers & Bikers</p>
+        </div>
+      </div>
 
 
-    </div>
+      <div id="body-container" class="row">
+
+        <!-- body / map -->
+        <div id="map-body" class="col s12 m8">
+          <div id="map">
+          </div>
+        </div>
+
+        <!-- right sidebar -->
+        <div id="sidebar-container" class="col s12 m4">
+          <div id="sidebar" class="blue-grey lighten-4 z-depth-2">
+            <h4>Location</h4>
+            <b>Zoom by Region:</b>
+            <ul id="region-list">
+              <li><a href="#" ng-click="northCascades()">North Cascades</a></li>
+              <li><a href="#" ng-click="centralCascades()">Central Cascades</a></li>
+              <li><a href="#" ng-click="southCascades()">South Cascades</a></li>
+              <li><a href="#" ng-click="mtRainier()">Mt Rainier</a></li>
+              <li><a href="#" ng-click="olympics()">Olympics</a></li>
+              <li><a href="#" ng-click="pugetSound()">Puget Sound & Islands</a></li>
+              <li><a href="#" ng-click="northeastWA()">Northeast Washington</a></li>
+              <li><a href="#" ng-click="southeastWA()">Southeast Washington</a></li>
+            </ul>
+
+            <!-- <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+              <a id="country_container" href="#" ng-click="OpenInfoWindow($event, marker)">
+              <label id="names">{{marker.title}}</label></a>
+            </div> -->
+          </div>
+
+          <div id="sidebarInfo">
+            <a href="#" ng-click="backSidebar()"><i class="material-icons">arrow_back</i></a>
+
+              TESTIN
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+    </div> <!-- end container -->
 
     <!-- javascripts -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlcsAeVjCfL44u5I9AOnRcRlAPCKyuOY0"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/javascripts/script.js"></script>
   </body>
 </html>
