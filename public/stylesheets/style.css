@@ -1,8 +1,8 @@
 
 body {
-  background-color: #fff;
+  background-color: #82b1ff;
   /*background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");*/
-  background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");
+  /*background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");*/
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 a {
@@ -19,9 +19,33 @@ a:hover {
   height: 100%;
   padding-bottom: 80px;
   margin: 0 auto;
-  border-left: 4px solid #ffd740;
-  border-right: 4px solid #ffd740;
+  /*border-left: 4px solid #ffd740;*/
+  border-right: 4px solid #fff;
+  border-left: 4px solid #fff;
 }
+
+/* NAVIGATION */
+#nav {
+  background-color: #808d94;
+  /*padding: 2px;*/
+}
+ #nav ul {
+ 	list-style-type: none;
+  float: right;
+  height: 60px;
+ }
+ #nav li {
+   color: #eceff1;
+ 	display:inline-block;
+ 	text-transform: uppercase;
+  /*color: #c372f2;*/
+ 	font-size:12px;
+  letter-spacing: 1px;
+  text-align:center;
+  width: 100px;
+  height: 60px;
+  /*margin-right:20px;*/
+ }
 
 /* HEADER */
 #top-container {
@@ -38,6 +62,7 @@ a:hover {
 #header {
   padding: 20px 20px 20px 30px;
   margin: 0px;
+  /*background-color: #e7ebed;*/
 }
 #header h1 {
   font-family: 'Roboto Slab', serif;
@@ -84,8 +109,10 @@ a:hover {
 #sidebar {
   padding: 10px;
   height: 500px;
+  /*background-color: #e7ebed;*/
+  background-color: #f5f7f8;
 }
-#sidebar h4 {
+#sidebar h4, #sidebarInfo h4 {
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
   text-transform: uppercase;
@@ -94,7 +121,8 @@ a:hover {
   color: #263238;
   margin: 10px 0px;
   padding-bottom: 2px;
-  border-bottom: 2px solid #808d94;
+  border-bottom: 2px solid #ffd740;
+  /*border-bottom: 2px solid #808d94;*/
 }
 #sidebar-container {
 /*margin-left: 5px;*/
@@ -102,6 +130,7 @@ a:hover {
 #sidebarInfo {
   padding: 10px;
   height: 500px;
+  background-color: #f5f7f8;
 }
 
 

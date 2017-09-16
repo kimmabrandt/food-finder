@@ -51,12 +51,14 @@ var places = [
 var foodFinderApp = angular.module('foodFinder', []);
 foodFinderApp.controller('MapCtrl', function($scope){
 	$("#sidebarInfo").hide();
+
   var mapOptions = {
     zoom: 7,
     center: new google.maps.LatLng(47, -122),
     mapTypeId: google.maps.MapTypeId.TERRAIN
   }
 
+  // zoom to location
   $scope.northCascades = function(){
     $scope.map.setCenter({lat: 48.38, lng: -121.041870});
     $scope.map.setZoom(9);
@@ -90,23 +92,22 @@ foodFinderApp.controller('MapCtrl', function($scope){
     $scope.map.setZoom(8);
   }
 
+  // back button on sidebar
   $scope.backSidebar = function() {
     $('#sidebarInfo').hide();
     $('#sidebar').show();
   }
 
+
   $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-
 
   $scope.markers = [];
 
   var infoWindow = new google.maps.InfoWindow();
 
 
-
+$scope.placeName = undefined;
   var createMarker = function(info) {
-
     var marker = new google.maps.Marker({
       map: $scope.map,
       position: new google.maps.LatLng(info.lat, info.long),
@@ -115,12 +116,14 @@ foodFinderApp.controller('MapCtrl', function($scope){
     });
     marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
 
-    google.maps.event.addListener(marker, 'click', function(){
+
+    google.maps.event.addListener(marker, 'click', function($scope){
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
         infoWindow.open($scope.map, marker);
         $('#sidebarInfo').show();
         $('#sidebar').hide();
-
+        // $scope.placeName = marker.title;
+        // console.log(marker.title);
     });
 
     $scope.markers.push(marker);
