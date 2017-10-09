@@ -4,6 +4,9 @@ body {
   /*background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");*/
   /*background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");*/
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  font-family: 'Asap', sans-serif;
+  font-size: 15px;
+
 }
 a {
   /*text-decoration: none;*/
@@ -15,7 +18,7 @@ a:hover {
   border-bottom: 1px solid #ffd740;
 }
 #container {
-  width: 800px;
+  width: 80%;
   height: 100%;
   padding-bottom: 80px;
   margin: 0 auto;
@@ -101,7 +104,7 @@ a:hover {
 }
 #map {
   height:500px;
-  width:500px;
+  width:100%;
   /*box-shadow: 3px 3px 10px gray;*/
 }
 
@@ -133,7 +136,46 @@ a:hover {
   background-color: #f5f7f8;
 }
 
+/* SIDEBAR INFO */
+#sidebar h5, #sidebarInfo h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  /*text-transform: uppercase;*/
+  font-size: 20px;
+  color: #263238;
+  margin: 10px 0px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ffd740;
+  /*border-bottom: 2px solid #808d94;*/
+}
+#address p, #comments p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+#region {
+  font-style: italic;
+  color: gray;
+  font-size: 17px;
+  margin:5px 0px;
+}
 
+
+/* INFO WINDOW */
+.infoWindowContent h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #263238;
+  margin: 10px 0px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #ffd740;
+  /*border-bottom: 2px solid #808d94;*/
+}
+.infoWindowContent {
+  font-family: 'Asap', sans-serif;
+  font-size: 15px;
+}
 
 /*idk*/
 #repeat {
