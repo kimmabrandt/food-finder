@@ -21,18 +21,23 @@
       <!-- top thingie -->
       <div id="top-container" class="row">
         <div id="top" class="col s12">
-          <% include partials/nav %>
         </div>
       </div>
 
       <!-- header -->
       <div class="row">
-        <div id="header" class="col s12 blue-grey lighten-5">
+        <div id="header" class="col s12">
           <h1>Food<img src="/images/010-compass.svg">Finder</h1>
           <p>For Hikers & Bikers</p>
         </div>
       </div>
 
+      <div class="row center amber accent-1">
+        <div class="container intro-cont">
+          Find your next hike! Use your mouse to explore the map and click the icons for more details. Search WTA's Hiking Guide or filter results using the panel at right. Zoom in from the statewide view to see many more results. The map only displays hikes with trail coordinates. Happy Hiking!
+
+        </div>
+      </div>
 
       <div id="body-container" class="row">
 
@@ -43,7 +48,7 @@
         </div>
 
         <!-- right sidebar -->
-        <div id="sidebar-container" class="col s12 m4">
+        <div id="sidebar-cont" class="col s12 m4">
           <div id="sidebar" class="z-depth-1">
             <h4>Location</h4>
             <b>Zoom by Region:</b>
@@ -65,7 +70,7 @@
           </div>
 
           <div id="sidebarInfo">
-            <a href="#" ng-click="backSidebar()"><i class="material-icons sidebar-icons">arrow_back</i></a>
+            <h4>Info</h4>
             <h5 id="placeName"></h5>
             <div id="region">
             </div>
@@ -73,6 +78,9 @@
             </div>
             <div id="comments">
             </div>
+
+            <a href="#" ng-click="backSidebar()"><i class="material-icons sidebar-icons">arrow_back</i></a>
+
           </div>
 
         </div>
