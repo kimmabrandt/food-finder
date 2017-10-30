@@ -11,12 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Autour+One|Bevan|Patrick+Hand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500i,600,700|Cairo:300,400,600,900|Roboto+Slab:400,700|Rubik:300,400,400i,500,700,900|Zilla+Slab+Highlight:400,700" rel="stylesheet">
 
-
   </head>
   <body ng-app="foodFinder">
     <div id="container" class="white"  ng-controller="MapCtrl">
-
-
 
       <!-- top thingie -->
       <div id="top-container" class="row">
@@ -35,12 +32,10 @@
       <div class="row center amber accent-1">
         <div class="container intro-cont">
           Find your next hike! Use your mouse to explore the map and click the icons for more details. Search WTA's Hiking Guide or filter results using the panel at right. Zoom in from the statewide view to see many more results. The map only displays hikes with trail coordinates. Happy Hiking!
-
         </div>
       </div>
 
       <div id="body-container" class="row">
-
         <!-- body / map -->
         <div id="map-body" class="col s12 m8">
           <div id="map" class="z-depth-1">
@@ -57,12 +52,14 @@
               <li><a href="#" ng-click="centralCascades()">Central Cascades</a></li>
               <li><a href="#" ng-click="southCascades()">South Cascades</a></li>
               <li><a href="#" ng-click="mtRainier()">Mt Rainier</a></li>
-              <li><a href="#" ng-click="olympics()">Olympics</a></li>
+              <li><a href="#" ng-click="olympics()">Olympic Peninsula</a></li>
               <li><a href="#" ng-click="pugetSound()">Puget Sound & Islands</a></li>
               <li><a href="#" ng-click="northeastWA()">Northeast Washington</a></li>
               <li><a href="#" ng-click="southeastWA()">Southeast Washington</a></li>
             </ul>
-
+            <div id="testing">
+              testing testing 1234
+            </div>
             <!-- <div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
               <a id="country_container" href="#" ng-click="OpenInfoWindow($event, marker)">
               <label id="names">{{marker.title}}</label></a>
@@ -78,28 +75,20 @@
             </div>
             <div id="comments">
             </div>
-
             <a href="#" ng-click="backSidebar()"><i class="material-icons sidebar-icons">arrow_back</i></a>
-
           </div>
-
         </div>
-
-
-
       </div>
 
     </div> <!-- end container -->
 
     <!-- javascripts -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlcsAeVjCfL44u5I9AOnRcRlAPCKyuOY0"></script>
-
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="/javascripts/restaurants.js"></script>
     <script src="/javascripts/script.js"></script>
 
-    <!-- <script src="/javascripts/test.js"></script> -->
   </body>
 </html>

@@ -1,4 +1,5 @@
 var express = require('express');
+var request = require('request');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -24,6 +25,42 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+
+// api call
+var options = { method: 'GET',
+  url: 'https://api.yelp.com/v3/businesses/search',
+  qs:
+   { term: 'restaurant',
+     location: 'boulder',
+     Authorization: 'Bearer puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx' },
+  headers:
+   { 'postman-token': '3e877574-ecff-5282-2190-08e9c0eba9b5',
+     'cache-control': 'no-cache',
+     authorization: 'Bearer puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx' } };
+
+app.get('/api', function(req, res){
+  request(options, function (error, response, body) {
+    if (error) throw new Error(error);
+    console.log(body);
+  });
+});
+
+//
+// request(options, function (error, response, body) {
+//   if (error) throw new Error(error);
+//
+//   console.log(body);
+// });
+
+// api call
+// app.get('/api', function(req, res){
+//   request('apiurl', function(error, response, body) {
+//     if (!error && response.statusCode === 200) {
+//       console.log(body);
+//       res.send(body);
+//     }
+//    });
+// });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

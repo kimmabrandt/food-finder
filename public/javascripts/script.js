@@ -3,9 +3,18 @@ var place;
 var myLatLng;
 var restName;
 
+// yelp vars
+var rating;
+var price;
+var url;
+
+
 // Angular app
 var foodFinderApp = angular.module('foodFinder', []);
 foodFinderApp.controller('MapCtrl', function($scope){
+
+
+
   // hide sidebar info by default
   $("#sidebarInfo").hide();
 
@@ -14,6 +23,33 @@ foodFinderApp.controller('MapCtrl', function($scope){
     $('#sidebarInfo').hide();
     $('#sidebar').show();
   }
+
+  // get yelp ratings
+  var getYelpRatings = function(){
+    var restaurantName = "Aardvark%20Express";
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + restaurantName + "&location=washington&Authorization=Bearer%20puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
+      "method": "GET",
+      "headers": {
+        "authorization": "Bearer puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
+        "cache-control": "no-cache",
+        "postman-token": "1619556b-8746-926e-6d6e-2931f394bb47"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      rating = response.businesses[0].rating;
+      price = response.businesses[0].price;
+      url = response.businesses[0].url;
+      console.log(rating);
+    });
+    console.log('clicked')
+  }
+
+
 
   // map configs
   var mapOptions = {
@@ -27,23 +63,26 @@ foodFinderApp.controller('MapCtrl', function($scope){
 
   $scope.markers = [];
 
-
   var infoWindow = new google.maps.InfoWindow();
 
   var createMarker = function(place) {
+    getYelpRatings();
+    place.rating = rating;
     myLatLng = {lat: place.latitude, lng: place.longitude};
     var marker = new google.maps.Marker({
       map: $scope.map,
       position: myLatLng,
       icon: './images/burger4.png',
       animation: google.maps.Animation.DROP,
-      title: place.restaurant
+      title: place.restaurant,
+      ratings: place.rating
     });
     // marker content to be viewed in info window
-    marker.content = '<div class="infoWindowContent"><h5>' + place.restaurant + '</h5>' + place.comments + '</div>';
+    marker.content = '<div class="infoWindowContent"><h5>' + place.restaurant + '</h5>' + place.address + '</div>';
 
     // when marker is clicked
     google.maps.event.addListener(marker, 'click', function($scope){
+
         // set content of info window
         infoWindow.setContent(marker.content);
         infoWindow.open($scope.map, marker);
@@ -53,7 +92,7 @@ foodFinderApp.controller('MapCtrl', function($scope){
         $('#sidebar').hide();
 
         // set content of sidebar info
-        $('#placeName').html(marker.title);
+        $('#placeName').html(marker.title + marker.ratings);
         $('#region').html(place.area);
         $('#address').html('<b>Address:</b><p>' + place.address + '</p>');
         if (place.comments) {
@@ -111,5 +150,7 @@ foodFinderApp.controller('MapCtrl', function($scope){
     $scope.map.setCenter({lat: 46.631168, lng: -118.85});
     $scope.map.setZoom(8);
   }
+
+
 
 });
