@@ -5,12 +5,12 @@
     <title><%= title %></title>
     <!-- stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Autour+One|Bevan|Patrick+Hand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500,500i,600,700|Cairo:300,400,600,900|Roboto+Slab:400,700|Rubik:300,400,400i,500,700,900|Zilla+Slab+Highlight:400,700" rel="stylesheet">
+
   </head>
   <body ng-app="foodFinder">
     <div id="container" class="white"  ng-controller="MapCtrl">
@@ -27,13 +27,13 @@
           <h1>Food<img src="/images/010-compass.svg">Finder</h1>
           <p>For Hikers & Bikers</p>
         </div>
+      </div>
 
-      <div class="col s12 center">
-        <div class="intro-cont">
+      <div class="row center amber accent-1">
+        <div class="container intro-cont">
           Find your next hike! Use your mouse to explore the map and click the icons for more details. Search WTA's Hiking Guide or filter results using the panel at right. Zoom in from the statewide view to see many more results. The map only displays hikes with trail coordinates. Happy Hiking!
         </div>
       </div>
-    </div>
 
       <div id="body-container" class="row">
         <!-- body / map -->
@@ -48,14 +48,14 @@
             <h4>Location</h4>
             <b>Zoom by Region:</b>
             <ul id="region-list">
-              <li><a href="" ng-click="northCascades()">North Cascades</a></li>
-              <li><a href="" ng-click="centralCascades()">Central Cascades</a></li>
-              <li><a href="" ng-click="southCascades()">South Cascades</a></li>
-              <li><a href="" ng-click="mtRainier()">Mt Rainier</a></li>
-              <li><a href="" ng-click="olympics()">Olympic Peninsula</a></li>
-              <li><a href="" ng-click="pugetSound()">Puget Sound & Islands</a></li>
-              <li><a href="" ng-click="northeastWA()">Northeast Washington</a></li>
-              <li><a href="" ng-click="southeastWA()">Southeast Washington</a></li>
+              <li><a href="#" ng-click="northCascades()">North Cascades</a></li>
+              <li><a href="#" ng-click="centralCascades()">Central Cascades</a></li>
+              <li><a href="#" ng-click="southCascades()">South Cascades</a></li>
+              <li><a href="#" ng-click="mtRainier()">Mt Rainier</a></li>
+              <li><a href="#" ng-click="olympics()">Olympic Peninsula</a></li>
+              <li><a href="#" ng-click="pugetSound()">Puget Sound & Islands</a></li>
+              <li><a href="#" ng-click="northeastWA()">Northeast Washington</a></li>
+              <li><a href="#" ng-click="southeastWA()">Southeast Washington</a></li>
             </ul>
           </div>
 
@@ -82,21 +82,21 @@
               Loading...
             </div>
 
+
             <a href="#" ng-click="backSidebar()"><i class="material-icons sidebar-icons arrowBack">arrow_back</i></a>
 
           </div>
         </div>
       </div>
 
-      <!-- footer -->
-      <div id="footer" class="row">
-        <div class="col s12 center">
-          © 2017 Kim and Bonnie Brandt
-        </div>
-      </div>
-
     </div> <!-- end container -->
 
+    <!-- footer -->
+    <div id="footer" class="row">
+      <div class="col s12">
+        Footer
+      </div>
+    </div>
 
 
     <!-- javascripts -->

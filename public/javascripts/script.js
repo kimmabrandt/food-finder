@@ -25,12 +25,14 @@ foodFinderApp.controller('MapCtrl', function($scope){
   }
 
   // get yelp ratings
-  var getYelpRatings = function(){
-    var restaurantName = "Aardvark%20Express";
+  var getYelpRatings = function(place){
+    console.log(place);
+    var restaurantName = place.restaurant;
+    var location = place.city;
     var settings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + restaurantName + "&location=washington&Authorization=Bearer%20puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
+      "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + restaurantName + "&location=" + location + ",WA&Authorization=Bearer%20puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
       "method": "GET",
       "headers": {
         "authorization": "Bearer puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
@@ -44,12 +46,27 @@ foodFinderApp.controller('MapCtrl', function($scope){
       rating = response.businesses[0].rating;
       price = response.businesses[0].price;
       url = response.businesses[0].url;
-      console.log(rating);
+
+      $('#yelpRating').html(rating + '/5');
+      $('#yelpPrice').html(price);
+      $('#yelpUrl').html('<a href="' + url + '" target="new">View Yelp Page</a>');
+
+      if (!rating) {
+        $('#yelpRating').html('N/A');
+      }
+      if (!price) {
+        $('#yelpPrice').html('N/A');
+      }
+      if (!url) {
+        $('#yelpUrl').html('');
+      }
+
+      $('#yelpLoading').hide();
+      $('#yelpInfoCont').show();
+
     });
     console.log('clicked')
   }
-
-
 
   // map configs
   var mapOptions = {
@@ -57,6 +74,11 @@ foodFinderApp.controller('MapCtrl', function($scope){
     center: new google.maps.LatLng(47, -122),
     mapTypeId: google.maps.MapTypeId.TERRAIN
   }
+
+  // if ( $(window).width() < 600){
+  //
+  //
+  // }
 
   // Create a map object
   $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -66,14 +88,12 @@ foodFinderApp.controller('MapCtrl', function($scope){
   var infoWindow = new google.maps.InfoWindow();
 
   var createMarker = function(place) {
-    getYelpRatings();
-    place.rating = rating;
     myLatLng = {lat: place.latitude, lng: place.longitude};
     var marker = new google.maps.Marker({
       map: $scope.map,
       position: myLatLng,
       icon: './images/burger4.png',
-      animation: google.maps.Animation.DROP,
+      // animation: google.maps.Animation.DROP,
       title: place.restaurant,
       ratings: place.rating
     });
@@ -82,6 +102,13 @@ foodFinderApp.controller('MapCtrl', function($scope){
 
     // when marker is clicked
     google.maps.event.addListener(marker, 'click', function($scope){
+        // yelp section
+        $('#yelpRating').html('');
+        $('#yelpPrice').html('');
+        $('#yelpUrl').html('');
+        $('#yelpInfoCont').hide();
+        $('#yelpLoading').show();
+        getYelpRatings(place);
 
         // set content of info window
         infoWindow.setContent(marker.content);
@@ -92,7 +119,7 @@ foodFinderApp.controller('MapCtrl', function($scope){
         $('#sidebar').hide();
 
         // set content of sidebar info
-        $('#placeName').html(marker.title + marker.ratings);
+        $('#placeName').html(marker.title);
         $('#region').html(place.area);
         $('#address').html('<b>Address:</b><p>' + place.address + '</p>');
         if (place.comments) {
@@ -100,6 +127,7 @@ foodFinderApp.controller('MapCtrl', function($scope){
         } else {
           $('#comments').html('');
         }
+
     });
 
     $scope.markers.push(marker);
@@ -150,7 +178,6 @@ foodFinderApp.controller('MapCtrl', function($scope){
     $scope.map.setCenter({lat: 46.631168, lng: -118.85});
     $scope.map.setZoom(8);
   }
-
 
 
 });
