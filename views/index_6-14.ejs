@@ -19,22 +19,9 @@
       <!-- HEADER -->
       <div id="top" class="col s12"></div>
       <div class="headerr" id="header" class="col s12">
-        <div class="inner-container">
           <!--<img src="/img/upload/009-cardinal-points.png">-->
           <h1>Food<img src="images/png/004-technology.png" id="logo-compass">Finder</h1>
           <p>For Hikers &amp; Bikers</p>
-        </div>
-        <style>
-          .inner-container {
-            max-width: 1170px;
-            margin: 0 auto;
-            padding: 1em 3em;
-            background-image: url('images/png/011-mountains2.png');
-            background-repeat: no-repeat;
-            background-position: right 20%;
-            background-size: 270px 200px;
-          }
-        </style>
       </div>
       <div class="white col s12 text-center">
           <div class="intro-cont">
@@ -70,6 +57,7 @@
 
       /* HEADER */
       #header {
+        padding: 1em 3em;
         background-color: #eceff1;
         font-size: 16px;
         width: 100%;
@@ -100,7 +88,7 @@
         margin-bottom: 0px;
         padding: 0px;
       }
-      /* #header .inner-container:before {
+      #header:before {
           content: ' ';
           display: block;
           position: absolute;
@@ -114,7 +102,7 @@
           background-repeat: no-repeat;
           background-position: 100% -5%;
           background-size: 270px 200px;
-      } */
+      }
       #header {
           z-index: 1;
       }
