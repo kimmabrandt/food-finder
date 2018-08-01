@@ -8,9 +8,14 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/styletemp.css' />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Autour+One|Bevan|Patrick+Hand" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Autour+One|Bevan|Patrick+Hand" rel="stylesheet"> -->
+
+
     <link href="https://fonts.googleapis.com/css?family=Asap:400,400i,500,500i,600,700|Cairo:300,400,600,900|Roboto+Slab:400,700|Rubik:300,400,400i,500,700,900|Zilla+Slab+Highlight:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,800|Inconsolata|Nanum+Gothic|Nunito:300,400,600,800,900|Raleway|Tajawal:400,500,600,700,800|Work+Sans|Nanum+Gothic+Coding:500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass+Mono:300,400,600|PT+Mono|Roboto+Mono:300,400,500|Source+Code+Pro:300,400,500,600|Space+Mono|Varela|Varela+Round" rel="stylesheet">
   </head>
   <body ng-app="foodFinder">
 
@@ -24,17 +29,6 @@
           <h1>Food<img src="images/png/004-technology.png" id="logo-compass">Finder</h1>
           <p>For Hikers &amp; Bikers</p>
         </div>
-        <style>
-          .inner-container {
-            max-width: 1170px;
-            margin: 0 auto;
-            padding: 1em 3em;
-            background-image: url('images/png/011-mountains2.png');
-            background-repeat: no-repeat;
-            background-position: right 20%;
-            background-size: 270px 200px;
-          }
-        </style>
       </div>
       <div class="white col s12 text-center">
           <div class="intro-cont">
@@ -44,169 +38,99 @@
                   </div>
                   <div class="col s10 ic-text">
                     <p>
-                      Find your next hike! Use your mouse to explore the map and click the icons for more details. Search WTA's Hiking Guide or filter results using the panel at right. Zoom in from the statewide view to see many more results. The map only displays hikes with trail coordinates. Happy Hiking!
+                      Find your next hike! Use your mouse to explore the map and click the icons for more details. Search WTA's Hiking Guide or filter results using the panel at right. Zoom in from the statewide view to see many more results. The map only displays hikes with trail coordinates. Happy Hiking!<br>
+                      Have a restaurant you'd like to add? <a href="#contact">Click here to submit</a>.
                     </p>
                   </div>
               </div>
           </div>
       </div>
-      <style>
-      /* HEADER */
-      #top {
-        background-color: #808d94;
-        /*background-color: #205677;*/
-        height: 15px;
-        margin: 0px;
-        padding: 0px;
-        width: 100%;
-      }
-      #top2 {
-        background-color: rgba(236, 239, 241, 0.49);
-        height: 6px;
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-      }
-
-      /* HEADER */
-      #header {
-        background-color: #eceff1;
-        font-size: 16px;
-        width: 100%;
-      }
-      #header h1 {
-        font-family: 'Roboto Slab', serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 57px;
-        letter-spacing: 2px;
-        color: #263238;
-        height: 50px;
-        margin: 0px;
-        padding: 0px;
-      }
-      #header img {
-        height: 42px;
-        margin: 0px 10px;
-      }
-      #header p {
-        text-transform: uppercase;
-        font-family: 'Asap', sans-serif;
-        font-weight: 400;
-        font-style: italic;
-        font-size: 24px;
-        color: #546e7a;
-        margin-top: 12px;
-        margin-bottom: 0px;
-        padding: 0px;
-      }
-      /* #header .inner-container:before {
-          content: ' ';
-          display: block;
-          position: absolute;
-          left: 0;
-          top: 15px;
-          width: 100%;
-          height: 130px;
-          z-index: 1;
-          opacity: 0.4;
-          background-image: url('images/png/011-mountains2.png');
-          background-repeat: no-repeat;
-          background-position: 100% -5%;
-          background-size: 270px 200px;
-      } */
-      #header {
-          z-index: 1;
-      }
-      #logo-compass {
-          position: relative;
-          top: -4px;
-      }
-      .container {
-          margin: 0px;
-          width: 100%;
-      }
-
-      /* INTRO */
-      .intro-cont {
-        padding: 0;
-        width: 70%;
-        margin: 35px auto;
-        text-align: center;
-        background-color: #fff;
-        border-top: 2px solid #205677;
-        border-bottom: 2px solid #205677;
-        /*border-bottom: 3px solid #2a4f65;*/
-        z-index: 1;
-      }
-      .ic-text {
-        padding: 3px;
-      }
-      .ic-icon {
-        padding: 8px 0 2px 0!important;
-      }
-      #sign-logo {
-          height: 80px;
-      }
-      </style>
       <!-- end header -->
 
-
       <div id="body-container" class="row">
-        <!-- body / map -->
-        <div id="map-body" class="col s12 m8">
-          <div id="map">
+        <div class="inner-container" style="padding-top:0;padding-bottom:0;">
+          <!-- body / map -->
+          <div id="map-body" class="col s12 m8">
+            <div id="map">
+            </div>
+            <div class="region-headline">
+            </div>
           </div>
-        </div>
-
-        <style>
-        #map {
-          border: 10px solid #f5f7f8;
+          <style>
+          .region-headline {
+              font-family: 'Dosis', sans-serif;
+              font-weight: 800;
+              /* font-family: 'Nunito', sans-serif;
+              font-weight: 900; */
+              text-transform: uppercase;
+              text-align: center;
+              font-size: 30px;
+              /* color: rgba(#FFAA00, 0.68); */
+              /* color: #263238; */
+              color: #263238;
+              background-color: rgba(245, 247, 248, 0.6);
+              padding: 4px;
+              margin: 10px auto;
+              position: absolute;
+              top: 45px;
+              left: 0;
+              right: 0;
+              margin-left: auto;
+              margin-right: auto;
+              width: auto;
+              z-index: 10;
+              /* text-shadow: 2px 2px 2px rgba(20,20,20,0.59); */
           }
-        </style>
 
-        <!-- right sidebar -->
-        <div id="sidebar-cont" class="col s12 m4">
-          <div id="sidebar">
-            <h4>Location</h4>
-            <b>Zoom by Region:</b>
-            <ul id="region-list">
-              <a href="" ng-click="northCascades()"><li>North Cascades</li></a>
-              <a href="" ng-click="centralCascades()"><li>Central Cascades</li></a>
-              <a href="" ng-click="southCascades()"><li>South Cascades</li></a>
-              <a href="" ng-click="mtRainier()"><li>Mt Rainier</li></a>
-              <a href="" ng-click="olympics()"><li>Olympic Peninsula</li></a>
-              <a href="" ng-click="pugetSound()"><li>Puget Sound & Islands</li></a>
-              <a href="" ng-click="northeastWA()"><li>Northeast Washington</li></a>
-              <a href="" ng-click="southeastWA()"><li>Southeast Washington</li></a>
-            </ul>
-          </div>
+          #map-body {
+            position: relative;
+          }
 
-          <div id="sidebarInfo">
-            <h4>Info</h4>
-            <h5 id="placeName"></h5>
-            <div id="region">
+          </style>
+          <!-- right sidebar -->
+          <div id="sidebar-cont" class="col s12 m4">
+            <div id="sidebar">
+              <h4>Zoom by Region:</h4>
+              <ul id="region-list">
+                <a href="" ng-click="northCascades()"><li>North Cascades</li></a>
+                <a href="" ng-click="centralCascades()"><li>Central Cascades</li></a>
+                <a href="" ng-click="southCascades()"><li>South Cascades</li></a>
+                <a href="" ng-click="mtRainier()"><li>Mt Rainier</li></a>
+                <a href="" ng-click="olympics()"><li>Olympic Peninsula</li></a>
+                <a href="" ng-click="pugetSound()"><li>Puget Sound & Islands</li></a>
+                <a href="" ng-click="northeastWA()"><li>Northeast Washington</li></a>
+                <a href="" ng-click="southeastWA()"><li>Southeast Washington</li></a>
+              </ul>
             </div>
-            <div id="address">
-            </div>
-            <div id="comments">
-            </div>
-            <hr>
-            <!-- yelp -->
-            <div id="yelp">
-              <div class="yelpLogo"></div>
-              <div id="yelpInfoCont">
-                <div class="yelpInfo"><b>Rating:</b><p id="yelpRating"></p></div>
-                <div class="yelpInfo"><b>Price:</b><p id="yelpPrice"></p></div>
-                <p id="yelpUrl"></p>
+
+            <div id="sidebarInfo">
+              <h4 class="h4-left">Info</h4>
+              <h4 class="h4-right"><a href="#" ng-click="backSidebar()"><i class="sidebar-icons material-icons arrowBack">arrow_back</i></a></h4>
+              <div style="clear:both"></div>
+              <h5 id="placeName"></h5>
+              <div id="region">
               </div>
-            </div>
-            <div id="yelpLoading">
-              Loading...
-            </div>
+              <div id="address">
+              </div>
+              <div id="comments">
+              </div>
+              <hr>
+              <!-- yelp -->
+              <div id="yelp">
+                <div class="yelpLogo"></div>
+                <div id="yelpInfoCont">
+                  <div class="yelpInfo"><b>Rating:</b><p id="yelpRating"></p></div>
+                  <div class="yelpInfo"><b>Price:</b><p id="yelpPrice"></p></div>
+                  <p id="yelpUrl"></p>
+                </div>
+              </div>
+              <div id="yelpLoading">
+                Loading...
+              </div>
 
-            <a href="#" ng-click="backSidebar()"><i class="material-icons sidebar-icons arrowBack">arrow_back</i></a>
+              <a href="#" ng-click="backSidebar()"><i class="material-icons sidebar-icons arrowBack">arrow_back</i></a>
 
+            </div>
           </div>
         </div>
       </div>
@@ -218,256 +142,93 @@
         </div>
       </div>
 
-      <style>
-        #divider {
-            width: 100%;
-            height: 94px;
-            /*background-color: #808d94;*/
-            background-color: #92a7b3;
-            margin: 40px 0px;
-            padding: 16px;
-        }
-        .divider-img {
-            margin: 0 auto;
-            width: 60px;
-        }
-        #divider-compass {
-            opacity: .8;
-            margin: 0px auto;
-            width: 60px;
-        }
-      </style>
-
-
       <!-- ABOUT  -->
 
       <div id="about">
-      	<h4>About</h4>
-      	<p>Food Finder is a projct intending to connect hikers to the best local, hiker approved restaurants. </p>
+        <div class="inner-container">
+          <h4>About</h4>
+          <div class="about-left">
+            <p>Food Finder is a projct intending to connect hikers to the best local, hiker approved restaurants. </p>
 
-        <h6>Credits</h6>
-        <p>Credits go here</p>
+            <h6>Credits</h6>
+            <p>Credits go here</p>
 
-        <h6>Disclaimer</h6>
-        <p>Disclaimer goes here</p>
+            <h6>Disclaimer</h6>
+            <p>Disclaimer goes here</p>
+          </div>
+          <div class="about-right">
+            <img src="images/img600.jpg" width="300px">
+          </div>
+          <div style="clear:both"></div>
+          <style>
+          .about-left {
+            width: 60%;
+            display: inline-block;
+            float: left;
+            padding-right: 20px;
+          }
+          .about-right {
+            width: 40%;
+            display: inline-block;
+            float: right;
+            padding: 20px;
+          }
+          </style>
+
+        </div>
+
+
       </div>
 
-      <style>
-        #about h4, #about h4 {
-          font-family: 'Roboto Slab', serif;
-          font-weight: 700;
-          text-transform: uppercase;
-          font-size: 30px;
-          letter-spacing: 1px;
-          margin: 10px 0px 20px 0px;
-          padding-bottom: 2px;
-          border-bottom: 1px solid #808d94;
-          }
-        #about {
-          padding: 36px;
-          background: #f5f7f8; /* Old browsers */
-          background: -moz-linear-gradient(top, #f5f7f8 60%, #ffffff 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(top, #f5f7f8 60%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to bottom, #f5f7f8 60%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f7f8', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-          border-left: 6px solid #fff;
-          height: 100%;
-          margin: 0 auto;
-          width: 60%;
-        }
-      	#about p {
-      		margin-bottom: 30px;
-      	}
-      	#about h6 {
-      		font-size: 22px;
-      	}
-      	#about a {
-      	    color: #ffd740;
-      	    font-weight: bold;
-      	}
-      	@media screen and (max-width: 900px){
-      	    #about {
-      	        width: 90%;
-      	    }
-      	}
-      	</style>
-
         <!-- FOOTER / CONTACT -->
-        <div class="row">
+        <div id="info-contact" class="row" style="margin-bottom: 0; background-color: #2a4f65">
+          <div id="contact" class="inner-container">
+            <div class="col s6">
+              <div class="footer-contact contact-left">
+              	<h4>Info</h4>
+              	<p>Created by Kim and Bonnie Brandt</p>
+              	<h6>KIM</h6>
+              	<p>
+                  <a href="mailto:kimmabrandt@gmail.com">kimmabrandt@gmail.com</a><br>
+                  <a target="_blank" href="http://kim-brandt.com">kim-brandt.com</a>
+              	</p>
 
+              	<h6>BONNIE</h6>
+              	<p>
+                  <a href="mailto:bonniejbrandt@hotmail.com">bonniejbrandt@hotmail.com</a>
+              	</p>
+              </div>
+            </div>
+            <div class="col s6">
+                <div class="footer-contact contact-right">
+                  <h4>Submit</h4>
+                  <p>Do you have a favorite restaurant you'd like to add? Fill out the form and we'll add it to the site. </p>
+                  <form class="form contact-form padded form-button-basic sb-form-contact-form" action="/app/preview/#formbuilder" method="post" data-sb-event="form-submit" target="_top">
+                    <div class="form-inner">
+                      <fieldset>
+                        <p class="form-required"><label for="id_name">Name</label> <input id="id_name" name="name" placeholder="Full Name" type="text"></p>
+                        <p class="form-required"><label for="id_email">Email</label> <input id="id_email" name="email" placeholder="Email" type="email"></p>
+                        <p class="form-required"><label for="id_phone">Phone</label> <input id="id_phone" name="phone" placeholder="Phone" type="text"></p>
+                        <p class="form-required"><label for="id_comment">Comment</label> <textarea cols="40" id="id_comment" name="comment" placeholder="Comment" rows="4"></textarea></p>
+                        <p class="submit">
+                          <input type="submit" value="Send" class="button">
+                        </p>
+                      </fieldset>
+                    </div>
+                  </form>
 
-          <div class="col s6" style="background-color: #2a4f65">
-            <div class="footer-contact contact-left">
-            	<h4>Info</h4>
-            	<p>Created by Kim and Bonnie Brandt</p>
-            	<h6>KIM</h6>
-            	<p>
-                <a href="mailto:kimmabrandt@gmail.com">kimmabrandt@gmail.com</a><br>
-                <a target="_blank" href="http://kim-brandt.com">kim-brandt.com</a>
-            	</p>
-
-            	<h6>BONNIE</h6>
-            	<p>
-                <a href="mailto:bonniejbrandt@hotmail.com">bonniejbrandt@hotmail.com</a>
-            	</p>
+                </div>
             </div>
           </div>
-          <div class="col s6" style="background-color: #2a4f65">
-              <div class="footer-contact">
-                <h4>Contact Us</h4>
-                <form class="form contact-form padded form-button-basic sb-form-contact-form" action="/app/preview/#formbuilder" method="post" data-sb-event="form-submit" target="_top">
-                  <div class="form-inner">
-                    <fieldset>
-                      <p class="form-required"><label for="id_name">Name</label> <input id="id_name" name="name" placeholder="Full Name" type="text"></p>
-                      <p class="form-required"><label for="id_email">Email</label> <input id="id_email" name="email" placeholder="Email" type="email"></p>
-                      <p class="form-required"><label for="id_phone">Phone</label> <input id="id_phone" name="phone" placeholder="Phone" type="text"></p>
-                      <p class="form-required"><label for="id_zip-code">Zip Code</label> <input id="id_zip-code" name="zip-code" placeholder="Zip Code" type="text"></p>
-                      <p class="form-required"><label for="id_comment">Comment</label> <textarea cols="40" id="id_comment" name="comment" placeholder="Comment" rows="4"></textarea></p>
-                      <p class="submit">
-                        <input type="submit" value="Send" class="button">
-                      </p>
-                    </fieldset>
-                  </div>
-                </form>
 
-              </div>
-          </div>
-
-        <style>
-          .footer-contact h4 {
-            font-family: 'Roboto Slab', serif;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 30px;
-            letter-spacing: 1px;
-            color: #fff;
-            margin: 10px 0px 20px 0px;
-            padding-bottom: 2px;
-            border-bottom: 1px solid rgba(255, 255, 255, .5);
-          }
-          .footer-contact {
-            padding: 36px;
-            /*background-color: #205677;*/
-            /*background-color: #354751;*/
-            /*background-color: #3a5b6d;*/
-            background-color: #2a4f65;
-            color: #fff;
-            height: 560px;
-            margin: 0px
-            font-size: 16px;
-            padding-left: 3em;
-          }
-        	.contact-left p {
-        		margin-bottom: 30px;
-        		font-size: 18px;
-        	}
-        	.footer-contact h6{
-        		font-size: 22px;
-        	}
-        	.footer-contact a {
-      	    color: #ffd740;
-      	    font-weight: bold;
-        	}
-
-          /*  FORM   */
-          .form-inner {
-            margin: 0px;
-            padding: 0px;
-          }
-          .sb-form-contact-form {
-            padding: 36px;
-            /*background-color: #205677;*/
-            /*background-color: #354751;*/
-            /*background-color: #3a5b6d;*/
-            background-color: #2a4f65;
-            height: ;
-            width: 100%;
-            margin: 0px;
-        	  font-size: 16px;
-        	  padding-right: 3em;
-          }
-          .sb-form-contact-form .content {
-            padding: 0px;
-            margin: 0px;
-            height: 100%;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-            }
-            .sb-form-contact-form .content p {
-              font-family: 'Roboto Slab', serif;
-              font-weight: 700;
-              text-transform: uppercase;
-              font-size: 30px;
-              letter-spacing: 1px;
-              color: #fff;
-              border-bottom: 1px solid rgba(255, 255, 255, .5);
-            }
-            .sb-form-contact-form label {
-              display: none;
-            }
-            .sb-form-contact-form .submit input {
-              width: 50%;
-              margin: 0px auto;
-              -webkit-appearance: none;
-              -moz-appearance: none;
-              appearance: none;
-              border: none;
-              border-radius: 0px;
-              text-align: center;
-              font-weight: bold;
-              position:relative;
-              background-color: #ffd740;
-              color: #000;
-              display: block;
-              font-size: 1.5em;
-              height: auto;
-              line-height: 1.4;
-              padding: 0.3em;
-              margin: 0 auto;
-            }
-            .sb-form-contact-form input {
-              height: 20px;
-              margin: 0;
-            }
-            .sb-form-contact-form input[type=email], .sb-form-contact-form input[type=text], .sb-form-contact-form input[type=url], .sb-form-contact-form textarea, .sb-form-contact-form select {
-              width: 100%;
-              border-radius: 0!important;
-              margin-bottom: 8px;
-              color: #3d3d3d;
-              background-color: #eceff1;
-              border: none;
-              position: relative;
-              font-size: 16px;
-              padding: 9px;
-            }
-            .sb-form-contact-form textarea {
-              height: 90px;
-              width: 100%;
-            }
-            fieldset {
-              border: none;
-            }
-        </style>
       </div>
 
       <!-- footer -->
       <div id="footer" class="row">
-        <div class="col s12 text-center">
+        <div class="col s12">
           © 2017 Kim and Bonnie Brandt
         </div>
       </div>
-
-      <style>
-          #footer {
-              height: 100%;
-              margin: 0px;
-              padding: 20px 20px 20px 30px;
-              font-size: 13px;
-              margin-bottom: none;
-              background-color: #eceff1;
-          }
-      </style>
 
 
 

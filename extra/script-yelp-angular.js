@@ -3,70 +3,29 @@ var place;
 var myLatLng;
 var restName;
 
-// yelp vars
-var rating;
-var price;
-var url;
-
 
 // Angular app
-var foodFinderApp = angular.module('foodFinder', []);
+var foodFinderApp = angular.module('foodFinder', ['achan.cordova.yelp'])
+.config(function (yelpProvider) {
+    yelpProvider.identify({
+      consumerKey: '<consumer key>',
+      consumerSecret: '<consumer secret>',
+      token: '<token>',
+      tokenSecret: '<token secret>'
+    });
+  });
+
 foodFinderApp.controller('MapCtrl', function($scope){
 
 
 
-  // hide by default
+  // hide sidebar info by default
   $("#sidebarInfo").hide();
-  $('.region-headline').hide();
 
   // back button on sidebar
   $scope.backSidebar = function() {
     $('#sidebarInfo').hide();
     $('#sidebar').show();
-  }
-
-  // get yelp ratings
-  var getYelpRatings = function(place){
-    console.log(place);
-    var restaurantName = place.restaurant;
-    var location = place.city;
-    var settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + restaurantName + "&location=" + location + ",WA&Authorization=Bearer%20puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
-      "method": "GET",
-      "headers": {
-        "authorization": "Bearer puhMNmwirFRkJjgjE5HmamkAg171rBt4ExNURU7fFSJwudbCGpaJSAv_QxnKs05rj9jMYk4S9OxSUO0CNsfaOo2XKAdvZ3ap-13Oul-OUT7s_sS5nrTT3qZGbbvmWXYx",
-        "cache-control": "no-cache",
-        "postman-token": "1619556b-8746-926e-6d6e-2931f394bb47"
-      }
-    }
-
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-      rating = response.businesses[0].rating;
-      price = response.businesses[0].price;
-      url = response.businesses[0].url;
-
-      $('#yelpRating').html(rating + '/5');
-      $('#yelpPrice').html(price);
-      $('#yelpUrl').html('<a href="' + url + '" target="new">View Yelp Page</a>');
-
-      if (!rating) {
-        $('#yelpRating').html('N/A');
-      }
-      if (!price) {
-        $('#yelpPrice').html('N/A');
-      }
-      if (!url) {
-        $('#yelpUrl').html('');
-      }
-
-      $('#yelpLoading').hide();
-      $('#yelpInfoCont').show();
-
-    });
-    console.log('clicked')
   }
 
   // map configs
@@ -76,15 +35,11 @@ foodFinderApp.controller('MapCtrl', function($scope){
     mapTypeId: google.maps.MapTypeId.TERRAIN
   }
 
-  // if ( $(window).width() < 600){
-  //
-  //
-  // }
-
   // Create a map object
   $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
   $scope.markers = [];
+
 
   var infoWindow = new google.maps.InfoWindow();
 
@@ -94,25 +49,14 @@ foodFinderApp.controller('MapCtrl', function($scope){
       map: $scope.map,
       position: myLatLng,
       icon: './images/burger4.png',
-      // animation: google.maps.Animation.DROP,
-      title: place.restaurant,
-      ratings: place.rating
+      animation: google.maps.Animation.DROP,
+      title: place.restaurant
     });
     // marker content to be viewed in info window
     marker.content = '<div class="infoWindowContent"><h5>' + place.restaurant + '</h5>' + place.address + '</div>';
 
     // when marker is clicked
     google.maps.event.addListener(marker, 'click', function($scope){
-        $('.region-headline').hide();
-
-        // yelp section
-        $('#yelpRating').html('');
-        $('#yelpPrice').html('');
-        $('#yelpUrl').html('');
-        $('#yelpInfoCont').hide();
-        $('#yelpLoading').show();
-        getYelpRatings(place);
-
         // set content of info window
         infoWindow.setContent(marker.content);
         infoWindow.open($scope.map, marker);
@@ -130,6 +74,26 @@ foodFinderApp.controller('MapCtrl', function($scope){
         } else {
           $('#comments').html('');
         }
+
+        // get yelp ratings
+        var id = 'gary-danko-san-francisco';
+        $.ajax({
+            url: "https://api.yelp.com/v3/businesses/",
+            dataType: 'jsonp',
+            data: {
+              id: id
+            },
+            success: function(results){
+
+            var rating = results.response.rating;
+            console.log(results);
+            console.log(rating);
+
+            // $("#tumblr-posts").append("<div class='item'><a href='/" + (k - i) + "'><img src=" + imgURL + " /></a></div>");
+
+            }
+          });
+
     });
 
     $scope.markers.push(marker);
@@ -151,50 +115,35 @@ foodFinderApp.controller('MapCtrl', function($scope){
   $scope.northCascades = function(){
     $scope.map.setCenter({lat: 48.38, lng: -121.041870});
     $scope.map.setZoom(9);
-    $('.region-headline').show();
-    $('.region-headline').html('North Cascades');
   }
   $scope.centralCascades = function(){
     $scope.map.setCenter({lat: 47.894823, lng: -121.041870});
     $scope.map.setZoom(8);
-    $('.region-headline').show();
-    $('.region-headline').html('Central Cascades');
   }
   $scope.southCascades = function(){
     $scope.map.setCenter({lat: 45.997260, lng: -122.036133});
     $scope.map.setZoom(9);
-    $('.region-headline').show();
-    $('.region-headline').html('South Cascades');
   }
   $scope.mtRainier = function(){
     $scope.map.setCenter({lat: 46.841701, lng: -121.657104});
     $scope.map.setZoom(9);
-    $('.region-headline').show();
-    $('.region-headline').html('Mt Ranier');
   }
   $scope.olympics = function(){
     $scope.map.setCenter({lat: 47.688157, lng: -123.574219});
     $scope.map.setZoom(8);
-    $('.region-headline').show();
-    $('.region-headline').html('Olympics');
   }
   $scope.pugetSound = function(){
     $scope.map.setCenter({lat: 48.3, lng: -122.43});
     $scope.map.setZoom(9);
-    $('.region-headline').show();
-    $('.region-headline').html('Puget Sound');
   }
   $scope.northeastWA = function(){
     $scope.map.setCenter({lat: 47.986820, lng: -118.85});
     $scope.map.setZoom(8);
-    $('.region-headline').show();
-    $('.region-headline').html('Northeast Washington');
   }
   $scope.southeastWA = function(){
     $scope.map.setCenter({lat: 46.631168, lng: -118.85});
     $scope.map.setZoom(8);
-    $('.region-headline').show();
-    $('.region-headline').html('Southeast Washington');
   }
+
 
 });

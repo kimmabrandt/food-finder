@@ -112,7 +112,7 @@ a:hover {
   padding: 0px;
 }
 #map {
-  height:500px;
+  height:600px;
   width:100%;
 }
 /*@media (max-width: 600px){
@@ -136,14 +136,43 @@ hr {
   background-color: #f5f7f8;*/
 }
 #sidebar h4, #sidebarInfo h4 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 30px;
-  letter-spacing: 1px;
+  /* font-family: 'Dosis', serif; */
+  /* font-family: 'Tajawal', serif; */
+  /* font-family: 'Nunito', serif; */
+  /* font-family: 'Raleway', serif; */
+/* font-family: 'Inconsolata', sans-serif; */
+  /* font-family: 'Nanum Gothic Coding', sans-serif; */
+    font-family: 'Source Code Pro', sans-serif;
+  /* lowercase */
+  /* font-family: 'Nanum Gothic', serif; */
+
+  font-weight: 400;
+  /* text-transform: uppercase; */
+  font-size: 34px;
+  letter-spacing: -1px;
+  /* letter-spacing: 1px; */
   color: #263238;
-  margin: 10px 0px;
-  padding-bottom: 2px;  /*border-bottom: 2px solid #808d94;*/
+  margin: 10px 0px 16px 0;
+  /* padding-bottom: 2px;  /*border-bottom: 2px solid #808d94;*/ */
+  /* border-bottom: 2px solid #92a7b3; */
+}
+#sidebarInfo .h4-left {
+  width: 90%;
+  display: inline-block;
+  float: left;
+}
+#sidebarInfo .h4-right {
+  width: 10%;
+  display: inline-block;
+  float: left;
+}
+#sidebarInfo .sidebar-icons {
+  font-size: 32px;
+  opacity: .6;
+  margin: 0;
+  /* float: right; */
+  text-align: right;
+  padding-right: 6px;
 }
 #sidebar-cont {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f7f8+0,ffffff+100 */
@@ -162,9 +191,17 @@ hr {
 
 /* SIDEBAR INFO */
 #sidebar h5, #sidebarInfo h5 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
-  /*text-transform: uppercase;*/
+  /* /// OPTION 1 ///  */
+  /* font-family: 'Roboto Slab', serif;
+  font-weight: 700; */
+
+  /* /// OPTION 2 /// */
+  font-family: 'asap', sans-serif;
+  font-weight: 600;
+  letter-spacing: .5px;
+
+
+  text-transform: uppercase;
   font-size: 20px;
   color: #263238;
   margin: 10px 0px;
@@ -172,11 +209,12 @@ hr {
   border-bottom: 2px solid #ffd740;
   /*border-bottom: 2px solid #808d94;*/
 }
+
 #region {
   font-style: italic;
   color: gray;
   font-size: 17px;
-  margin:5px 0px;
+  margin:5px 0px 10px 0;
 }
 #address p, #comments p, #yelpUrl {
   margin-top: 0px;
@@ -212,13 +250,20 @@ hr {
 .arrowBack {
   padding: none;
   margin: 10px 0px;
-  height: 100%;
+  /* height: 100%; */
 }
 
 /* INFO WINDOW */
 .infoWindowContent h5 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: 700;
+  /* /// OPTION 1 ///  */
+  /* font-family: 'Roboto Slab', serif;
+  font-weight: 700; */
+
+  /* /// OPTION 2 /// */
+  font-family: 'asap', sans-serif;
+  font-weight: 600;
+  letter-spacing: .5px;
+
   text-transform: uppercase;
   font-size: 20px;
   color: #263238;
@@ -238,8 +283,10 @@ hr {
   margin: 10px 0;
 }
 #region-list li {
+  font-family: 'Nunito', serif;
+  font-size: 20px;
   padding: 1px 4px;
-  background-color: rgba(82, 82, 82, 0.1);
+  /* background-color: rgba(82, 82, 82, 0.1); */
   margin: 2px 0px;
 }
 /*#region-list li::before {

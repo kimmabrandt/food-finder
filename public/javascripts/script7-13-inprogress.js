@@ -8,12 +8,12 @@ var rating;
 var price;
 var url;
 
+// var yelpInfo = [];
+
 
 // Angular app
 var foodFinderApp = angular.module('foodFinder', []);
 foodFinderApp.controller('MapCtrl', function($scope){
-
-
 
   // hide by default
   $("#sidebarInfo").hide();
@@ -42,12 +42,43 @@ foodFinderApp.controller('MapCtrl', function($scope){
       }
     }
 
+    // sample object
+    var yelpInfo = [
+      {
+        "restaurant": "Aardvark Express",
+        "rating": "4.5",
+        "price": "$$",
+        "url": "http://blah.com"
+      }
+    ]
+
+    // setting the response info to variables
     $.ajax(settings).done(function (response) {
       console.log(response);
       rating = response.businesses[0].rating;
       price = response.businesses[0].price;
       url = response.businesses[0].url;
 
+      if (response) {
+        console.log("AJAX call worked")
+      }
+
+    // making a constructor function
+    function addYelp (yBusiness, yRating, yPrice, yUrl) {
+      this.yBusiness = yBusiness;
+      this.yRating = yRating;
+      this.yPrice = yPrice;
+      this.yUrl = yUrl;
+    }
+    var addYelp1 = new addYelp(place.restaurant, rating, price, url);
+    console.log (addYelp1);
+
+    yelpInfo[yelpInfo.length] = addYelp1;
+    console.log(yelpInfo);
+
+
+
+      // adding the info to html
       $('#yelpRating').html(rating + '/5');
       $('#yelpPrice').html(price);
       $('#yelpUrl').html('<a href="' + url + '" target="new">View Yelp Page</a>');
@@ -67,7 +98,7 @@ foodFinderApp.controller('MapCtrl', function($scope){
 
     });
     console.log('clicked')
-  }
+  } // end getYelpRatings
 
   // map configs
   var mapOptions = {
@@ -139,6 +170,7 @@ foodFinderApp.controller('MapCtrl', function($scope){
   for (i = 0; i < 171; i++){
       place = restaurants[i];
       createMarker(place);
+      // getYelpRatings(place);
   }
 
   // open info window when click on marker

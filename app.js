@@ -45,6 +45,12 @@ app.get('/api', function(req, res){
   });
 });
 
+
+app.get('/test', function(req, res) {
+  res.sendFile(path.join(__dirname+'/test.html')
+);
+});
+
 //
 // request(options, function (error, response, body) {
 //   if (error) throw new Error(error);

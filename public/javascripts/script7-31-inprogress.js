@@ -130,6 +130,19 @@ foodFinderApp.controller('MapCtrl', function($scope){
         } else {
           $('#comments').html('');
         }
+
+        // zoom to location
+        $scope.zoomTo.sele = function(){
+          $scope.map.setCenter({lat: 48.38, lng: -121.041870});
+          $scope.map.setZoom(9);
+          $('.region-headline').show();
+          $('.region-headline').html('North Cascades');
+        }
+        $scope.northCascades = function(){
+          $scope.map.setCenter({lat: 48.38, lng: -121.041870});
+          $scope.map.setZoom(9);
+          $('.region-headline').show();
+          $('.region-headline').html('North Cascades');
     });
 
     $scope.markers.push(marker);
