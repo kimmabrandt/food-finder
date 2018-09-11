@@ -19,7 +19,7 @@
   </head>
   <body ng-app="foodFinder">
 
-    <div id="container" class="white"  ng-controller="MapCtrl">
+    <div id="container" ng-controller="MapCtrl">
 
       <!-- HEADER -->
       <div id="top" class="col s12"></div>
@@ -30,7 +30,21 @@
           <p>For Hikers &amp; Bikers</p>
         </div>
       </div>
-      <div class="white col s12 text-center">
+      <style>
+        #header h1 {
+          /* font-variant-ligatures: liga!important;
+          text-rendering: geometricPrecision!important; */
+          font-variant-ligatures: common-lig-values!important;
+    font-size-adjust: 0.5;
+    font-stretch: normal;
+    font-kearning: none;
+    font-variant: normal;
+
+
+
+        }
+      </style>
+      <div class="col s12 text-center">
           <div class="intro-cont">
               <div class="row" style="margin-bottom:0">
                   <div class="col s2 ic-icon">
