@@ -1,6 +1,7 @@
 
 body {
-  background-color: #024024;
+  background-color: #ebebeb;
+  background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");
   /*background-image: url("https://www.transparenttextures.com/patterns/concrete-wall.png");*/
   /*background-image: url("https://www.transparenttextures.com/patterns/purty-wood.png");*/
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
@@ -175,12 +176,6 @@ hr {
   padding-right: 6px;
 }
 #sidebar-cont {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f7f8+0,ffffff+100 */
-  background: #f5f7f8; /* Old browsers */
-  background: -moz-linear-gradient(top, #f5f7f8 60%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f5f7f8 60%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f5f7f8 60%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f7f8', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
   border-left: 6px solid #fff;
 }
 #sidebarInfo {

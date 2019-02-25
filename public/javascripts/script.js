@@ -73,7 +73,25 @@ foodFinderApp.controller('MapCtrl', function($scope){
   var mapOptions = {
     zoom: 7,
     center: new google.maps.LatLng(47, -122),
-    mapTypeId: google.maps.MapTypeId.TERRAIN
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
+    mapTypeControl: true,
+    mapTypeControlOptions: {
+        style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+        position: google.maps.ControlPosition.RIGHT_BOTTOM
+    },
+    zoomControl: true,
+    zoomControlOptions: {
+        position: google.maps.ControlPosition.LEFT_TOP
+    },
+    scaleControl: true,
+    streetViewControl: true,
+    streetViewControlOptions: {
+        position: google.maps.ControlPosition.LEFT_TOP
+    },
+    fullscreenControl: false,
+    fullscreenControlOptions: {
+        position: google.maps.ControlPosition.RIGHT_BOTTOM
+    }
   }
 
   // if ( $(window).width() < 600){
